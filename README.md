@@ -1,6 +1,8 @@
 # update-github-host
 快速简单的更新github的hosts访问地址
+
 适用于windows11 hosts文件在C:\Windows\System32\Drivers\etc\hosts
+
 【脚本功能】
 自动从多个源获取最新的Github HOSTS并更新本机hosts文件
 更新后自动刷新DNS缓存，立即生效
