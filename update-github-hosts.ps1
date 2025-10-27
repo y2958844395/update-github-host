@@ -183,7 +183,7 @@ if (-not (Test-Path $backupFolder)) {
     }
 }
 
-$backupFileName = "hosts_backup_$(Get-Date -Format 'yyyy-MM-dd_HH-mm-ss').txt"
+$backupFileName = "hosts_backup_$(Get-Date -Format 'yyyy-MM-dd_HH.mm.ss').txt"
 # Use string concatenation instead of Join-Path to avoid issues in .exe environment
 if ($backupFolder -match '\\$') {
     $backupPath = $backupFolder + $backupFileName
