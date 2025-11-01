@@ -65,7 +65,7 @@ foreach ($source in $hostsSources) {
         # Filter only lines with IP and github (exclude comments)
         $lines = $hostsContent -split "`n" | Where-Object { 
             $line = $_.ToString().Trim()
-            $line -ne "" -and $line -notmatch '^#' -and $line -match '^\d+\.\d+\.\d+\.\d+\s+\S+.*github*' 
+            $line -ne "" -and $line -notmatch '^#' -and $line -match '^\d+\.\d+\.\d+\.\d+\s+.*github.*$' 
         }
         
         if ($lines.Count -gt 0) {
