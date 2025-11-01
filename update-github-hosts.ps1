@@ -62,10 +62,10 @@ foreach ($source in $hostsSources) {
             $hostsContent = [string]$response.Content
         }
         
-        # Filter only lines with IP and github (exclude comments)
+        # Filter only lines with IP and github/vscode (exclude comments)
         $lines = $hostsContent -split "`n" | Where-Object { 
             $line = $_.ToString().Trim()
-            $line -ne "" -and $line -notmatch '^#' -and $line -match '^\d+\.\d+\.\d+\.\d+\s+.*github.*$' 
+            $line -ne "" -and $line -notmatch '^#' -and $line -match '^\d+\.\d+\.\d+\.\d+\s+.*(?:github|vscode\.dev).*$' 
         }
         
         if ($lines.Count -gt 0) {
